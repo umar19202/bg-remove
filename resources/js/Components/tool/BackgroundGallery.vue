@@ -72,7 +72,7 @@ function onCustomUpload(e) {
             <button
                 v-for="cat in categories"
                 :key="cat.id"
-                class="flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-medium transition-all duration-200"
+                class="flex cursor-pointer items-center gap-1.5 rounded-full px-4 py-2 text-xs font-medium transition-all duration-200"
                 :class="activeCategory === cat.id
                     ? 'bg-primary text-white shadow-md shadow-primary/25'
                     : 'bg-surface-alt text-muted hover:bg-primary/10 hover:text-primary'"
@@ -94,7 +94,7 @@ function onCustomUpload(e) {
             <div v-if="customPreview" class="relative">
                 <img :src="customPreview" alt="Custom background" class="h-24 w-full rounded-xl object-cover shadow-sm" />
                 <button
-                    class="absolute top-2 right-2 flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-white shadow"
+                    class="absolute top-2 right-2 flex h-6 w-6 cursor-pointer items-center justify-center rounded-full bg-red-500 text-white shadow"
                     @click="customPreview = null; customFile = null"
                 >
                     <i class="bi bi-x text-xs"></i>
@@ -106,7 +106,7 @@ function onCustomUpload(e) {
             <button
                 v-for="bg in backgrounds[activeCategory]"
                 :key="bg.id"
-                class="group relative aspect-square overflow-hidden rounded-xl shadow-sm transition-all duration-200 hover:ring-2 hover:ring-primary hover:ring-offset-2"
+                class="group relative cursor-pointer overflow-hidden rounded-xl shadow-sm transition-all duration-200 hover:ring-2 hover:ring-primary hover:ring-offset-2"
                 :class="selectedBg === bg.id ? 'ring-2 ring-primary ring-offset-2' : ''"
                 @click="emit('select', bg)"
             >

@@ -26,7 +26,7 @@ const activeSample = ref(0);
                 <button
                     v-for="(sample, index) in samples"
                     :key="index"
-                    class="flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-200"
+                    class="flex cursor-pointer items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-200"
                     :class="activeSample === index
                         ? 'bg-primary text-white shadow-lg shadow-primary/25'
                         : 'bg-surface-alt text-muted hover:bg-primary/10 hover:text-primary'"

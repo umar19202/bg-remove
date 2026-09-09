@@ -100,7 +100,7 @@ function removeFile() {
                         <div class="relative mx-auto w-full max-w-sm">
                             <img :src="preview" alt="Preview" class="mx-auto max-h-64 rounded-xl object-contain shadow-md" />
                             <button
-                                class="absolute -top-2 -right-2 flex h-8 w-8 items-center justify-center rounded-full bg-red-500 text-white shadow-lg transition-transform hover:scale-110"
+                                class="absolute -top-2 -right-2 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-red-500 text-white shadow-lg transition-transform hover:scale-110"
                                 @click.stop="removeFile"
                             >
                                 <i class="bi bi-x-lg text-sm"></i>

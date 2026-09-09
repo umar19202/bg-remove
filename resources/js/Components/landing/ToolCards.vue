@@ -30,7 +30,7 @@ const tools = [
 </script>
 
 <template>
-    <section class="section-padding bg-surface">
+    <section id="tool-cards" class="section-padding bg-surface">
         <div class="container-wide">
             <div class="section-title">
                 <span class="mb-3 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">

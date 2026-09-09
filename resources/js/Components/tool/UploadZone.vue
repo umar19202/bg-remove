@@ -132,7 +132,7 @@ function clearAll() {
                 <div class="relative mx-auto w-full max-w-sm">
                     <img :src="files[0].preview" alt="Preview" class="mx-auto max-h-64 rounded-xl object-contain shadow-md" />
                     <button
-                        class="absolute -top-2 -right-2 flex h-8 w-8 items-center justify-center rounded-full bg-red-500 text-white shadow-lg transition-transform hover:scale-110"
+                        class="absolute -top-2 -right-2 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-red-500 text-white shadow-lg transition-transform hover:scale-110"
                         @click.stop="removeFile(files[0].id)"
                     >
                         <i class="bi bi-x-lg text-sm"></i>
@@ -148,13 +148,13 @@ function clearAll() {
             <div v-else class="space-y-4">
                 <div class="flex items-center justify-between">
                     <p class="text-sm font-medium text-heading">{{ files.length }} file{{ files.length > 1 ? 's' : '' }} selected</p>
-                    <button class="text-xs text-red-500 hover:text-red-700" @click.stop="clearAll">Clear all</button>
+                    <button class="cursor-pointer text-xs text-red-500 hover:text-red-700" @click.stop="clearAll">Clear all</button>
                 </div>
                 <div class="mx-auto grid max-h-48 grid-cols-3 gap-2 overflow-y-auto sm:grid-cols-4">
                     <div v-for="f in files" :key="f.id" class="group relative">
                         <img :src="f.preview" :alt="f.file.name" class="aspect-square rounded-lg object-cover shadow-sm" />
                         <button
-                            class="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-white opacity-0 transition-opacity group-hover:opacity-100"
+                            class="absolute -top-1 -right-1 flex h-5 w-5 cursor-pointer items-center justify-center rounded-full bg-red-500 text-white opacity-0 transition-opacity group-hover:opacity-100"
                             @click.stop="removeFile(f.id)"
                         >
                             <i class="bi bi-x text-[10px]"></i>

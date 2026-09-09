@@ -63,15 +63,15 @@
     }
 
     .btn-primary {
-        @apply inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-all duration-300 hover:bg-primary-dark hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5;
+        @apply inline-flex cursor-pointer items-center gap-2 rounded-lg bg-primary px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-all duration-300 hover:bg-primary-dark hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5;
     }
 
     .btn-outline {
-        @apply inline-flex items-center gap-2 rounded-lg border-2 border-primary px-7 py-3.5 text-sm font-semibold text-primary transition-all duration-300 hover:bg-primary hover:text-white;
+        @apply inline-flex cursor-pointer items-center gap-2 rounded-lg border-2 border-primary px-7 py-3.5 text-sm font-semibold text-primary transition-all duration-300 hover:bg-primary hover:text-white;
     }
 
     .btn-ghost {
-        @apply inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium text-body transition-colors duration-200 hover:bg-surface-alt;
+        @apply inline-flex cursor-pointer items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium text-body transition-colors duration-200 hover:bg-surface-alt;
     }
 
     .card {

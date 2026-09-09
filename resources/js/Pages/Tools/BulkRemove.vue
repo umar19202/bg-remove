@@ -142,7 +142,7 @@ function onError(msg) {
                                             <i class="bi" :class="paused ? 'bi-play-fill' : 'bi-pause-fill'"></i>
                                             {{ paused ? 'Resume' : 'Pause' }}
                                         </button>
-                                        <button class="text-xs text-red-500 hover:text-red-700" disabled>
+                                        <button class="cursor-pointer text-xs text-red-500 hover:text-red-700" disabled>
                                             Cancel
                                         </button>
                                     </template>

@@ -13,19 +13,24 @@ const props = defineProps({
 
 const loaded = ref(false);
 
+function scrollTo(selector) {
+    const el = document.querySelector(selector);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+}
+
 onMounted(() => {
     setTimeout(() => { loaded.value = true; }, 100);
 });
 </script>
 
 <template>
-    <section class="relative min-h-[85vh] overflow-hidden bg-dark-bg pt-24 pb-16 lg:pt-28 lg:pb-20">
+    <section class="relative min-h-screen overflow-hidden bg-dark-bg pt-24 lg:pt-0">
         <div class="absolute inset-0 opacity-10">
             <div class="absolute top-20 left-10 h-72 w-72 rounded-full bg-primary blur-[120px]"></div>
             <div class="absolute bottom-20 right-10 h-96 w-96 rounded-full bg-primary-light blur-[150px]"></div>
         </div>
 
-        <div class="container-wide relative z-10 flex min-h-[calc(85vh-12rem)] items-center py-10">
+        <div class="container-wide relative z-10 flex min-h-screen items-center py-20">
             <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
 
                 <div :class="loaded ? 'animate-slide-in-left' : 'opacity-0'">
@@ -52,7 +57,7 @@ onMounted(() => {
                     </p>
 
                     <div class="mb-10 flex flex-wrap items-center gap-4">
-                        <a :href="ctaHref" class="btn-primary !px-8 !py-4 !text-base" @click.prevent="document.querySelector(ctaHref)?.scrollIntoView({ behavior: 'smooth' })">
+                        <a :href="ctaHref" class="btn-primary !px-8 !py-4 !text-base" @click.prevent="scrollTo(ctaHref)">
                             <i class="bi bi-cloud-arrow-up text-lg"></i>
                             {{ ctaLabel }}
                         </a>

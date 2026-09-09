@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue';
+import AppIcon from '@/Components/landing/AppIcon.vue';
 
 const loaded = ref(false);
 const activeStep = ref(0);
@@ -9,6 +10,11 @@ const steps = [
     { icon: 'bi-cpu', label: 'Process' },
     { icon: 'bi-download', label: 'Download' },
 ];
+
+function scrollTo(selector) {
+    const el = document.querySelector(selector);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+}
 
 onMounted(() => {
     setTimeout(() => { loaded.value = true; }, 100);
@@ -53,11 +59,11 @@ onMounted(() => {
                     </p>
 
                     <div class="mb-10 flex flex-wrap items-center gap-4">
-                        <a href="#upload" class="btn-primary !px-8 !py-4 !text-base" @click.prevent="document.querySelector('#upload')?.scrollIntoView({ behavior: 'smooth' })">
+                        <a href="#tool-cards" class="btn-primary !px-8 !py-4 !text-base" @click.prevent="scrollTo('#tool-cards')">
                             <i class="bi bi-cloud-arrow-up text-lg"></i>
                             Start Removing — It's Free
                         </a>
-                        <a href="#how-it-works" class="inline-flex items-center gap-2 text-sm font-medium text-white/70 transition-colors hover:text-white" @click.prevent="document.querySelector('#how-it-works')?.scrollIntoView({ behavior: 'smooth' })">
+                        <a href="#how-it-works" class="inline-flex cursor-pointer items-center gap-2 text-sm font-medium text-white/70 transition-colors hover:text-white" @click.prevent="scrollTo('#how-it-works')">
                             See How It Works
                             <i class="bi bi-arrow-down-short text-lg"></i>
                         </a>
@@ -85,7 +91,7 @@ onMounted(() => {
                         <!-- Central hub -->
                         <div class="relative z-20 flex h-28 w-28 items-center justify-center rounded-full bg-gradient-to-br from-primary to-blue-600 shadow-2xl shadow-primary/40">
                             <div class="absolute inset-0 rounded-full bg-primary/20 animate-pulse-ring"></div>
-                            <i class="bi bi-layers-fill text-4xl text-white"></i>
+                            <AppIcon :size="56" :light="true" />
                         </div>
 
                         <!-- Orbit ring -->

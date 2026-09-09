@@ -1,23 +1,26 @@
 <script setup>
+import { Link } from '@inertiajs/vue3';
+import AppIcon from '@/Components/landing/AppIcon.vue';
+
 const currentYear = new Date().getFullYear();
 
 const footerLinks = {
     Product: [
-        { label: 'Remove Background', href: '#upload' },
-        { label: 'How It Works', href: '#how-it-works' },
-        { label: 'Features', href: '#features' },
-        { label: 'Gallery', href: '#gallery' },
+        { label: 'Remove Background', href: '/remove-background' },
+        { label: 'Change Background', href: '/change-background' },
+        { label: 'Bulk Remove', href: '/bulk-remove' },
+        { label: 'How It Works', href: '/#how-it-works' },
     ],
     Resources: [
+        { label: 'About Us', href: '/about' },
         { label: 'Documentation', href: '#' },
         { label: 'API (Coming Soon)', href: '#' },
         { label: 'Blog', href: '#' },
-        { label: 'Changelog', href: '#' },
     ],
     Legal: [
-        { label: 'Privacy Policy', href: '#' },
-        { label: 'Terms of Service', href: '#' },
-        { label: 'Cookie Policy', href: '#' },
+        { label: 'Privacy Policy', href: '/privacy' },
+        { label: 'Terms of Service', href: '/terms' },
+        { label: 'Contact Us', href: '/contact' },
     ],
 };
 
@@ -33,14 +36,12 @@ const socialLinks = [
         <div class="container-wide">
             <div class="grid gap-12 pb-12 sm:grid-cols-2 lg:grid-cols-5 lg:gap-8">
                 <div class="lg:col-span-2">
-                    <a href="/" class="mb-5 flex items-center gap-2.5">
-                        <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-                            <i class="bi bi-layers-fill text-lg text-white"></i>
-                        </div>
+                    <Link href="/" class="mb-5 flex items-center gap-2.5">
+                        <AppIcon :size="36" />
                         <span class="text-xl font-bold tracking-tight text-white">
                             BG<span class="text-primary-light">Remover</span>
                         </span>
-                    </a>
+                    </Link>
                     <p class="mb-6 max-w-xs text-sm leading-relaxed text-white/50">
                         Free AI-powered background removal tool. Upload any image and get a clean,
                         transparent cutout in seconds.
@@ -62,12 +63,12 @@ const socialLinks = [
                     <h4 class="mb-5 text-sm font-semibold uppercase tracking-wider text-white/80">{{ category }}</h4>
                     <ul class="space-y-3">
                         <li v-for="link in links" :key="link.label">
-                            <a
+                            <Link
                                 :href="link.href"
                                 class="text-sm text-white/40 transition-colors duration-200 hover:text-white"
                             >
                                 {{ link.label }}
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
