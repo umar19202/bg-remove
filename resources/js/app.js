@@ -7,7 +7,7 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from 'ziggy-js';
 
 createInertiaApp({
-    title: (title) => title ? `${title} - Starter` : 'Starter',
+    title: (title) => title ? `${title} - BGRemover` : 'BGRemover - Remove Background From Any Image',
     resolve: (name) =>
         resolvePageComponent(
             `./Pages/${name}.vue`,
@@ -20,6 +20,6 @@ createInertiaApp({
             .mount(el);
     },
     progress: {
-        color: '#4F46E5',
+        color: '#175cdd',
     },
 });

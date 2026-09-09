@@ -22,3 +22,12 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# ONNX model (download separately from HuggingFace)
+/storage/app/models/*.onnx
+
+# Clinic template (reference only)
+/Clinic-1.0.0/
+
+# Node service dependencies
+/services/*/node_modules/

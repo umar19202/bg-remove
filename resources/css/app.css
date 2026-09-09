@@ -6,6 +6,128 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    --font-sans: 'Roboto', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-heading: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+
+    --color-primary: #175cdd;
+    --color-primary-dark: #1248b0;
+    --color-primary-light: #3a7af5;
+    --color-heading: #112344;
+    --color-body: #3c4049;
+    --color-surface: #ffffff;
+    --color-surface-alt: #f4f7fc;
+    --color-dark-bg: #0b1c3d;
+    --color-dark-surface: #12254a;
+    --color-accent: #175cdd;
+    --color-border: #e0e4eb;
+    --color-muted: #6b7280;
 }
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: var(--font-sans);
+        color: var(--color-body);
+        background-color: var(--color-surface);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-heading);
+        color: var(--color-heading);
+    }
+}
+
+@layer components {
+    .section-padding {
+        @apply px-5 py-20 md:py-24 lg:py-28;
+    }
+
+    .container-wide {
+        @apply mx-auto max-w-7xl px-5 sm:px-6 lg:px-8;
+    }
+
+    .section-title {
+        @apply mx-auto mb-14 max-w-2xl text-center;
+    }
+
+    .section-title h2 {
+        @apply mb-4 text-3xl font-bold tracking-tight sm:text-4xl lg:text-[2.75rem];
+    }
+
+    .section-title p {
+        @apply text-lg text-muted;
+    }
+
+    .btn-primary {
+        @apply inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-all duration-300 hover:bg-primary-dark hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5;
+    }
+
+    .btn-outline {
+        @apply inline-flex items-center gap-2 rounded-lg border-2 border-primary px-7 py-3.5 text-sm font-semibold text-primary transition-all duration-300 hover:bg-primary hover:text-white;
+    }
+
+    .btn-ghost {
+        @apply inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium text-body transition-colors duration-200 hover:bg-surface-alt;
+    }
+
+    .card {
+        @apply rounded-2xl bg-white p-7 shadow-sm ring-1 ring-border transition-all duration-300 hover:shadow-lg hover:shadow-primary/5;
+    }
+
+    .fade-in {
+        animation: fadeInUp 0.6s ease-out both;
+    }
+
+    .fade-in-delay-1 { animation-delay: 0.1s; }
+    .fade-in-delay-2 { animation-delay: 0.2s; }
+    .fade-in-delay-3 { animation-delay: 0.3s; }
+    .fade-in-delay-4 { animation-delay: 0.4s; }
+    .fade-in-delay-5 { animation-delay: 0.5s; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes pulse-ring {
+    0% { transform: scale(0.95); opacity: 1; }
+    100% { transform: scale(1.3); opacity: 0; }
+}
+
+@keyframes slide-in-left {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-in-right {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scale-in {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-float-delay { animation: float 3s ease-in-out 1.5s infinite; }
+.animate-pulse-ring { animation: pulse-ring 2s ease-out infinite; }
+.animate-slide-in-left { animation: slide-in-left 0.6s ease-out both; }
+.animate-slide-in-right { animation: slide-in-right 0.6s ease-out both; }
+.animate-scale-in { animation: scale-in 0.5s ease-out both; }
